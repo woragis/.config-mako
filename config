@@ -4,8 +4,8 @@
 font=JetBrainsMono Nerd Font 11
 anchor=top-right
 layer=overlay
-# Clear the AGS bar (~42px strip + margin) + gap
-outer-margin=56,12,12,12
+# Clear the AGS bar (~56px) + gap
+outer-margin=64,12,12,12
 margin=8
 padding=10,14
 width=360
