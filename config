@@ -1,36 +1,38 @@
-# Tokyo Night Storm — mako notifications
-# Docs: man 5 mako
+# Tokyo Night Storm — mako
+# Same glass as the AGS bar: quiet border, scarce accent, Hyprland blur.
 
-font=JetBrainsMono Nerd Font 11
+font=JetBrainsMono Nerd Font 12
 anchor=top-right
 layer=overlay
-# Clear the AGS bar (~56px) + gap
-outer-margin=64,12,12,12
+# Bar layer is 52px; 16px side gap matches bar-shell margin
+outer-margin=60,16,16,16
 margin=8
-padding=10,14
-width=360
-height=140
-border-size=2
-border-radius=12
+padding=12,14
+width=340
+height=160
+border-size=1
+border-radius=14
 icons=1
-max-icon-size=48
-icon-border-radius=8
+max-icon-size=36
+icon-location=left
+icon-border-radius=10
 icon-path=/usr/share/icons/Papirus-Dark:/usr/share/icons/Papirus
 markup=1
 actions=1
-default-timeout=5000
+default-timeout=4500
 ignore-timeout=0
-max-visible=4
+max-visible=3
 max-history=20
 sort=-time
 group-by=app-name
-format=<b>%s</b>\n%b
+format=<span weight="600">%s</span>\n<span fgcolor="#a9b1d6">%b</span>
 text-alignment=left
 
-background-color=#1a1b26ee
+# ~72% #1a1b26 — blur does the rest (hypr layer_rule notifications)
+background-color=#1a1b26b8
 text-color=#c0caf5ff
-border-color=#7aa2f7cc
-progress-color=over #7aa2f7ff
+border-color=#c0caf517
+progress-color=over #7aa2f744
 
 on-button-left=invoke-default-action
 on-button-right=dismiss
@@ -38,25 +40,35 @@ on-button-middle=dismiss-all
 on-touch=dismiss
 
 [urgency=low]
-border-color=#565f89aa
+border-color=#c0caf512
 text-color=#a9b1d6ff
-default-timeout=3500
+default-timeout=3000
 
 [urgency=normal]
-border-color=#7aa2f7cc
-default-timeout=5000
+border-color=#c0caf517
+default-timeout=4500
 
 [urgency=critical]
-border-color=#f7768eff
-border-size=3
-background-color=#1a1b26ff
+border-color=#f7768e4d
+background-color=#1a1b26d9
 text-color=#c0caf5ff
 default-timeout=0
 ignore-timeout=1
 
+[grouped]
+format=<span size="x-small" fgcolor="#565f89">%a  ·  %g</span>\n<span weight="600">%s</span>\n<span fgcolor="#a9b1d6">%b</span>
+
+[hidden]
+format=<span fgcolor="#565f89">+%h more</span>
+
+[app-name=Subliminals]
+border-color=#bb9af755
+default-timeout=3500
+
 [app-name=Music]
-border-color=#9ece6acc
+border-color=#9ece6a55
 default-timeout=4000
 
 [app-name=strawberry]
-border-color=#9ece6acc
+border-color=#9ece6a55
+default-timeout=4000
